@@ -1,2 +1,0 @@
-# Quibble-App
-
