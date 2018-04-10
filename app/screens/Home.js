@@ -1,11 +1,11 @@
-import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
-import { Logo, DAButton } from 'app/components/'
+import React, { Component } from 'react'
+import { View } from 'react-native'
+import { Button } from '../components'
 
-export default class Home extends React.Component {
+export default class Home extends Component {
     onPressPlay = (e) => {
         console.log('Play')
-        this.props.screenProps.rootNavigation.navigate('GameScreen')
+        this.props.screenProps.rootNavigation.navigate('Game')
     }
 
     onPressAbout = (e) => {
@@ -14,20 +14,20 @@ export default class Home extends React.Component {
 
     onPressLogin = (e) => {
         console.log('Login')
-        this.props.navigation.navigate('LoginScreen')
+        this.props.navigation.navigate('Login')
     }
 
     render() {
         return (
-            <View style={styles.container}>
-                <DAButton
+            <View>
+                <Button.Primary
                     text='Играть'
                     onPress={this.onPressPlay} />
-                <DAButton
+                <Button
                     text='О приложении'
                     onPress={this.onPressAbout}
                     type='default' />
-                <DAButton
+                <Button
                     text='Войти'
                     onPress={this.onPressLogin}
                     type='default' />
@@ -35,11 +35,3 @@ export default class Home extends React.Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'stretch',
-        justifyContent: 'flex-start',
-    },
-});
