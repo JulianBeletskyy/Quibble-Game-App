@@ -1,6 +1,8 @@
 {
   "expo": {
     "sdkVersion": "26.0.0",
-    "slug": "Quibble"
+    "slug": "Quibble",
+    "orientation": "portrait",
+    "privacy": "public"
   }
 }

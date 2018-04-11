@@ -24,10 +24,13 @@ export default class Input extends React.Component {
 
     render() {
         const {
+            inputRef = null,
+            onSubmit = null,
             placeholder = '',
             style = {},
             type = 'text',
             icon = null,
+            returnKeyType = 'done',
         } = this.props
 
         return (
@@ -38,11 +41,15 @@ export default class Input extends React.Component {
                     : null
                 }
                 <TextInput
+                    ref={inputRef}
+                    onSubmitEditing={onSubmit}
                     style={[styles.input, style]}
                     placeholder={placeholder}
                     placeholderTextColor={styles.$placeholder}
                     underlineColorAndroid='transparent'
                     secureTextEntry={type == 'password'}
+                    blurOnSubmit={false}
+                    returnKeyType={returnKeyType}
                     value={this.state.value}
                     onChangeText={this.onChangeText} />
             </View>

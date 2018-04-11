@@ -1,11 +1,22 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
-import { Button } from '../components'
+import { View, AsyncStorage } from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import actions from '../actions'
+import { Container, Button } from '../components'
 
-export default class Home extends Component {
+class Home extends Component {
+    componentDidMount = () => {
+        this.props.isHome(true)
+        AsyncStorage.getItem('token').then((token) => {
+            if (token) {
+                this.props.loggedIn(token)
+            }
+        })
+    }
+
     onPressPlay = (e) => {
-        console.log('Play')
-        this.props.screenProps.rootNavigation.navigate('Game')
+        this.props.navigation.navigate('Teams')
     }
 
     onPressAbout = (e) => {
@@ -13,25 +24,60 @@ export default class Home extends Component {
     }
 
     onPressLogin = (e) => {
-        console.log('Login')
+        this.props.isHome(false)
         this.props.navigation.navigate('Login')
     }
 
+    onPressLogout = (e) => {
+        AsyncStorage.removeItem('token')
+        this.props.logout()
+    }
+
     render() {
+        const { token } = this.props.users
         return (
-            <View>
-                <Button.Primary
-                    text='Играть'
-                    onPress={this.onPressPlay} />
-                <Button
-                    text='О приложении'
-                    onPress={this.onPressAbout}
-                    type='default' />
-                <Button
-                    text='Войти'
-                    onPress={this.onPressLogin}
-                    type='default' />
-            </View>
-        );
+            <Container.WithBackground>
+                <Container.Public>
+                    <Button.Primary
+                        text='Играть'
+                        onPress={this.onPressPlay} />
+                    <Button
+                        text='О приложении'
+                        onPress={this.onPressAbout}
+                        type='default' />
+                    {
+                        ! token
+                        ?
+                            (<Button
+                                text='Войти'
+                                onPress={this.onPressLogin}
+                                type='default' />)
+                        :
+                            (<Button
+                                text='Выйти'
+                                onPress={this.onPressLogout}
+                                type='default' />)
+                    }
+                </Container.Public>
+            </Container.WithBackground>
+        )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        home: state.screens.home,
+        users: {
+            token: state.users.token,
+        }
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators(actions, dispatch)
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Home)

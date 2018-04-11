@@ -44,7 +44,7 @@ export default class Animate extends Component {
                 duration: ANIMATION_DURATION,
             }),
         ]).start()
-    };
+    }
 
     keyboardWillHide = () => {
         Animated.parallel([
@@ -57,7 +57,7 @@ export default class Animate extends Component {
                 duration: ANIMATION_DURATION,
             }),
         ]).start()
-    };
+    }
 
     render() {
         const style = [

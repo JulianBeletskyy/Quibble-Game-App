@@ -3,24 +3,26 @@ import { View, Keyboard } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../actions'
-import { Container, Button, Input, Words } from '../components'
+import { Container, Button, Input } from '../components'
 
-class Login extends Component {
+class Register extends Component {
     constructor(props) {
         super(props)
 
         this.data = {
+            name: '',
             email: '',
             password: '',
         }
 
         this.inputs = {
+            name: null,
             email: null,
             password: null,
         }
     }
 
-    componentWillReceiveProps(newProps) {
+    componentWillReceiveProps (newProps) {
         if (newProps.users.token && newProps.users.token != this.props.users.token) {
             newProps.navigation.navigate('Home')
             Keyboard.dismiss()
@@ -31,8 +33,14 @@ class Login extends Component {
         this.data[key] = value
     }
 
-    onPressLogin = (e) => {
-        if (this.data.email == '') {
+    onPressRegister = (e) => {
+        if (this.data.name == '') {
+            this.props.message({
+                'title': 'Name is required!',
+                'body': 'Please enter your name',
+                'type': 'error',
+            })
+        } else if (this.data.email == '') {
             this.props.message({
                 'title': 'Email is required!',
                 'body': 'Please enter a valid email',
@@ -46,12 +54,8 @@ class Login extends Component {
             })
         } else {
             this.props.loaderShow()
-            this.props.login(this.data)
+            this.props.register(this.data)
         }
-    }
-
-    onPressRegister = (e) => {
-        this.props.navigation.navigate('Register')
     }
 
     focusNext = (index) => {
@@ -66,6 +70,14 @@ class Login extends Component {
                 <Container.Public
                     onBack={() => this.props.navigation.goBack()}>
                     <Input
+                        icon='contact'
+                        placeholder='Имя'
+                        inputRef={input => { this.inputs.name = input }}
+                        onSubmit={() => this.focusNext('email')}
+                        returnKeyType={"next"}
+                        onChangeText={value => this.handleText(value, 'name')} />
+
+                    <Input
                         icon='mail'
                         placeholder='Email'
                         inputRef={input => { this.inputs.email = input }}
@@ -75,21 +87,14 @@ class Login extends Component {
 
                     <Input.Password
                         icon='lock'
+                        placeholder='Пароль'
                         inputRef={input => { this.inputs.password = input }}
+                        onSubmit={this.onPressRegister}
                         returnKeyType={"done"}
-                        onSubmit={this.onPressLogin}
-                        onChangeText={value => this.handleText(value, 'password')}
-                        placeholder='Пароль' />
+                        onChangeText={value => this.handleText(value, 'password')} />
 
                     <Button.Primary
-                        text='Войти'
-                        onPress={this.onPressLogin} />
-
-                    <Words.WithLines
-                        text='или' />
-
-                    <Button
-                        text='Создать аккаунт'
+                        text='Регистрация'
                         onPress={this.onPressRegister} />
                 </Container.Public>
             </Container.WithBackground>
@@ -112,4 +117,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Login)
+)(Register)

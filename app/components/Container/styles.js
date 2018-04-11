@@ -1,6 +1,8 @@
 import EStyleSheet from "react-native-extended-stylesheet"
 
 export default EStyleSheet.create({
+    $loaderColor: '$white',
+    $loaderBackColor: '$loaderBack',
     container: {
         flex: 1,
         backgroundColor: '$black',
@@ -36,4 +38,17 @@ export default EStyleSheet.create({
     poweredByText: {
         color: '$lightGray'
     },
+    back: {
+        position: 'absolute',
+        top: 30,
+        left: 0,
+        right: 0,
+    },
+    loader: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 30,
+        alignItems: 'flex-start',
+    }
 })

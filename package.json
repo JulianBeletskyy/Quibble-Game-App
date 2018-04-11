@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "Quibble",
+  "version": "0.2.0",
   "private": true,
   "devDependencies": {
     "react-native-scripts": "1.13.1",
@@ -27,6 +27,11 @@
     "react-native": "0.54.0",
     "react-native-dropdownalert": "^3.4.0",
     "react-native-extended-stylesheet": "^0.8.1",
-    "react-navigation": "^1.5.10"
+    "react-native-loader": "^1.2.1",
+    "react-navigation": "^1.5.10",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0"
   }
 }

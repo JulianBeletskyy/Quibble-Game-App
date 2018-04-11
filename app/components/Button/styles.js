@@ -2,6 +2,7 @@ import EStyleSheet from "react-native-extended-stylesheet"
 
 export default EStyleSheet.create({
     $primaryColor: '$primary',
+    $whiteColor: '$white',
     btn: {
         borderStyle: "solid",
         borderRadius: 5,
@@ -21,5 +22,8 @@ export default EStyleSheet.create({
         color: '$white',
         fontSize: 20,
         fontWeight: 'bold'
-    }
+    },
+    icon: {
+
+    },
 })

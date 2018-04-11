@@ -1,48 +1,28 @@
-import { StackNavigator, TabNavigator } from "react-navigation";
-import { Start, Home, Login, Teams } from "../screens";
+import { StackNavigator } from "react-navigation";
+import { Home, Login, Register, Teams } from "../screens";
 
 const StackOptions = {
     headerMode: "none",
     cardStyle: {
         backgroundColor: "transparent",
     }
-};
+}
 
-export const PublicStack = TabNavigator({
+export default StackNavigator({
     Home: {
         screen: Home
     },
     Login: {
         screen: Login
-    }
-},
-{
-    initialRouteName: "Login",
-    navigationOptions: {
-        tabBarVisible: false,
-        swipeEnabled: false,
-    }
-})
-
-const GameStack = StackNavigator({
+    },
+    Register: {
+        screen: Register
+    },
     Teams: {
         screen: Teams
-    }
-},
-{
-    ...StackOptions,
-    initialRouteName: "Teams",
-});
-
-export default StackNavigator({
-    Start: {
-        screen: Start
-    },
-    Game: {
-        screen: GameStack
     },
 },
 {
     ...StackOptions,
-    initialRouteName: "Start"
+    initialRouteName: "Home"
 })

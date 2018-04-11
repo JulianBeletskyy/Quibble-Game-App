@@ -20,7 +20,7 @@ const AlertConnect = (WrappedComponent) => {
         alert: PropTypes.func,
     }
 
-    return hoistNonReactStatic(ConnectedAlert, WrappedComponent);
+    return hoistNonReactStatic(ConnectedAlert, WrappedComponent)
 };
 
 export default AlertConnect

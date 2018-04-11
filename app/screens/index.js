@@ -1,11 +1,11 @@
-import Start from './Start'
 import Home from './Home'
 import Login from './Login'
+import Register from './Register'
 import Teams from './Teams'
 
 export {
-    Start,
     Home,
     Login,
+    Register,
     Teams,
 }
