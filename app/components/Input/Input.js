@@ -31,6 +31,7 @@ export default class Input extends React.Component {
             type = 'text',
             icon = null,
             returnKeyType = 'done',
+            keyboardType = 'default',
         } = this.props
 
         return (
@@ -50,6 +51,7 @@ export default class Input extends React.Component {
                     secureTextEntry={type == 'password'}
                     blurOnSubmit={false}
                     returnKeyType={returnKeyType}
+                    keyboardType={keyboardType}
                     value={this.state.value}
                     onChangeText={this.onChangeText} />
             </View>

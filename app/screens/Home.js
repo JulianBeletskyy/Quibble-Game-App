@@ -7,7 +7,6 @@ import { Container, Button } from '../components'
 
 class Home extends Component {
     componentDidMount = () => {
-        this.props.isHome(true)
         AsyncStorage.getItem('token').then((token) => {
             if (token) {
                 this.props.loggedIn(token)
@@ -24,7 +23,6 @@ class Home extends Component {
     }
 
     onPressLogin = (e) => {
-        this.props.isHome(false)
         this.props.navigation.navigate('Login')
     }
 

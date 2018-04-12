@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Keyboard } from 'react-native'
+import { NavigationActions } from 'react-navigation'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../actions'
@@ -22,8 +23,14 @@ class Login extends Component {
 
     componentWillReceiveProps(newProps) {
         if (newProps.users.token && newProps.users.token != this.props.users.token) {
-            newProps.navigation.navigate('Home')
-            Keyboard.dismiss()
+            if (newProps.screens.current == 'Login') {
+                Keyboard.dismiss()
+                const resetAction = NavigationActions.reset({
+                    index: 0,
+                    actions: [NavigationActions.navigate({ routeName: 'Home' })],
+                })
+                newProps.navigation.dispatch(resetAction)
+            }
         }
     }
 
@@ -64,13 +71,14 @@ class Login extends Component {
         return (
             <Container.WithBackground>
                 <Container.Public
-                    onBack={() => this.props.navigation.goBack()}>
+                    onBack={() => { this.props.navigation.goBack() }}>
                     <Input
                         icon='mail'
                         placeholder='Email'
                         inputRef={input => { this.inputs.email = input }}
                         onSubmit={() => this.focusNext('password')}
-                        returnKeyType={"next"}
+                        returnKeyType="next"
+                        keyboardType="email-address"
                         onChangeText={value => this.handleText(value, 'email')} />
 
                     <Input.Password
@@ -101,7 +109,10 @@ const mapStateToProps = (state) => {
     return {
         users: {
             token: state.users.token,
-        }
+        },
+        screens: {
+            current: state.screens.current,
+        },
     }
 }
 

@@ -30,6 +30,7 @@ export default class AlertProvider extends Component {
                 {React.Children.only(this.props.children)}
                 <DropdownAlert
                     endDelta={StatusBar.currentHeight}
+                    inactiveStatusBarStyle="light-content"
                     ref={(ref) => { this.dropdown = ref }} />
             </View>
         )

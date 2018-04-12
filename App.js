@@ -1,5 +1,5 @@
-import App from './app/index'
-
 console.disableYellowBox = true
+
+import App from './app/index'
 
 export default App

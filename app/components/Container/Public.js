@@ -79,6 +79,7 @@ class Public extends Component {
                     this.state.poweredBy
                     ?
                         (<View style={styles.poweredBy}>
+                            <Text style={styles.poweredByText}>v 0.1.0</Text>
                             <Text style={styles.poweredByText}>Powered by Div-Art</Text>
                         </View>)
                     : null

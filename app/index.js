@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import Navigator from './config/routes'
 import EStyleSheet from 'react-native-extended-stylesheet'
 import { AlertProvider } from './components/Alert'
+import actions from './actions'
 import store from './config/store'
 
 EStyleSheet.build({
@@ -11,17 +12,20 @@ EStyleSheet.build({
     $black: '#000',
     $gray: '#555',
     $lightGray: '#999',
-    $loaderBack: 'rgba(0, 0, 0, 0.5)'
+    $loaderBack: 'rgba(0, 0, 0, 0.5)',
 
     //$outline: 1,
-});
+})
 
-class App extends React.Component {
+class App extends Component {
     render() {
         return (
             <Provider store={store}>
                 <AlertProvider>
-                    <Navigator />
+                    <Navigator onNavigationStateChange={(prevState, nextState) => {
+                        const screen = nextState.routes[nextState.routes.length - 1].routeName
+                        store.dispatch(actions.currentScreen(screen))
+                    }} />
                 </AlertProvider>
             </Provider>
         )

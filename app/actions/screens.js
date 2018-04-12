@@ -1,9 +1,9 @@
 import * as types from './types'
 
-export function isHome(value) {
+export function currentScreen(data) {
     return {
-        type: types.IS_HOME,
-        value
+        type: types.CURRENT_SCREEN,
+        data
     }
 }
 

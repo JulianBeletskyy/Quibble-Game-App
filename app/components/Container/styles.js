@@ -30,7 +30,7 @@ export default EStyleSheet.create({
         paddingTop: 50,
     },
     poweredBy: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
         justifyContent: 'flex-end',
         paddingBottom: 10,
@@ -40,6 +40,7 @@ export default EStyleSheet.create({
     },
     back: {
         position: 'absolute',
+        zIndex: 1,
         top: 30,
         left: 0,
         right: 0,

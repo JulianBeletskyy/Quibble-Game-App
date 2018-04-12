@@ -1,16 +1,16 @@
 import * as types from '../actions/types'
 
 const initialState = {
-    home: true,
+    current: true,
     loader: false,
 }
 
 export default (screens = initialState, action) => {
     switch (action.type) {
-        case types.IS_HOME:
+        case types.CURRENT_SCREEN:
             return {
                 ...screens,
-                home: action.value,
+                current: action.data,
             }
         case types.LOADER_SHOW:
             return {
