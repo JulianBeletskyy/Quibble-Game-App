@@ -5,9 +5,12 @@ import styles from './styles'
 
 export default class Words extends Component {
     render() {
-        const { text = '' } = this.props
+        const { text = '', style = {} } = this.props
         return (
-            <Text>{text}</Text>
+            <Text
+                style={style}>
+                {text}
+            </Text>
         )
     }
 }

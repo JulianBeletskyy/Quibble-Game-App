@@ -26,4 +26,13 @@ export default EStyleSheet.create({
     icon: {
 
     },
+    smallBtn: {
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        marginBottom: 0,
+    },
+    smallText: {
+        fontSize: 15,
+        fontWeight: "normal",
+    },
 })

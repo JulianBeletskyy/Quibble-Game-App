@@ -5,16 +5,17 @@ export default EStyleSheet.create({
     $loaderBackColor: '$loaderBack',
     container: {
         flex: 1,
-        backgroundColor: '$black',
+        backgroundColor: '$back',
     },
     content: {
         flex: 1,
-        alignItems: 'center',
+        alignItems: 'stretch',
         justifyContent: 'center',
     },
     body: {
         flex: 1,
         width: '80%',
+        marginLeft: '10%',
         alignItems: 'stretch',
         justifyContent: 'center',
     },
@@ -51,5 +52,23 @@ export default EStyleSheet.create({
         right: 0,
         top: 30,
         alignItems: 'flex-start',
-    }
+    },
+    logoContainer: {
+        flex: 1,
+        alignItems: 'stretch',
+        justifyContent: 'center',
+        paddingHorizontal: 10
+    },
+    logoSmall: {
+        flex: 2,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    title: {
+        flex: 1,
+    },
+    game: {
+        flex: 10,
+    },
 })

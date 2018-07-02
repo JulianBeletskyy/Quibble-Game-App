@@ -91,7 +91,6 @@ class Public extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        home: state.screens.home,
         screens: {
             loader: state.screens.loader,
         },

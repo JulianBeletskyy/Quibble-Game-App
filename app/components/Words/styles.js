@@ -18,5 +18,9 @@ export default EStyleSheet.create({
     text: {
         color: '$lightGray',
         fontSize: 20,
-    }
+    },
+    title: {
+        fontSize: 30,
+        color: '$white',
+    },
 })

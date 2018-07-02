@@ -11,6 +11,7 @@ export default class Icon extends Component {
         const {
             icon = "",
             size = 30,
+            style = {},
             color = styles.$whiteColor,
             onPress = null,
             onLongPress = null,
@@ -18,7 +19,7 @@ export default class Icon extends Component {
 
         return (
             <TouchableOpacity
-                style={[styles.icon]}
+                style={[styles.icon, style]}
                 onPress={onPress}
                 onLongPress={onLongPress}>
                 <Ionicons name={`${ICON_PREFIX}-${icon}`} size={size} color={color} />

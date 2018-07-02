@@ -15,7 +15,7 @@ class Home extends Component {
     }
 
     onPressPlay = (e) => {
-        this.props.navigation.navigate('Teams')
+        this.props.navigation.navigate('Game')
     }
 
     onPressAbout = (e) => {
@@ -27,7 +27,6 @@ class Home extends Component {
     }
 
     onPressLogout = (e) => {
-        AsyncStorage.removeItem('token')
         this.props.logout()
     }
 

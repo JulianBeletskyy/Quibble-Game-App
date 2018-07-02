@@ -4,6 +4,7 @@ import Logo from './Logo'
 import Button from './Button'
 import Input from './Input'
 import Words from './Words'
+import Teams from './Teams'
 
 export {
     Container,
@@ -12,4 +13,5 @@ export {
     Button,
     Input,
     Words,
+    Teams,
 }

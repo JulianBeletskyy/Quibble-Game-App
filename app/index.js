@@ -7,6 +7,7 @@ import actions from './actions'
 import store from './config/store'
 
 EStyleSheet.build({
+    $back: "#211f20",
     $primary: "#f42f41",
     $white: '#fff',
     $black: '#000',

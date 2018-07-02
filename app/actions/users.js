@@ -3,14 +3,16 @@ import * as types from './types'
 export function login(data) {
     return {
         type: types.AUTH_LOGIN,
-        data
+        method: 'login',
+        callback: 'loggedIn',
+        data,
     }
 }
 
 export function loggedIn(data) {
     return {
         type: types.AUTH_LOGGED_IN,
-        data
+        data,
     }
 }
 
@@ -23,6 +25,8 @@ export function logout(data) {
 export function register(data) {
     return {
         type: types.AUTH_REGISTER,
-        data
+        method: 'register',
+        callback: 'loggedIn',
+        data,
     }
 }

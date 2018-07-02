@@ -9,8 +9,14 @@ export default EStyleSheet.create({
     $logoHeight: LOGO_HEIGHT,
     $logoSmallWidth: LOGO_WIDTH / 2,
     $logoSmallHeight: LOGO_HEIGHT / 2,
+    $logoHeaderWidth: LOGO_WIDTH / 2.3,
+    $logoHeaderHeight: LOGO_HEIGHT / 2.3,
     logo: {
         width: '$logoWidth',
         height: '$logoHeight',
+    },
+    logoSmall: {
+        width: '$logoHeaderWidth',
+        height: '$logoHeaderHeight',
     },
 })
