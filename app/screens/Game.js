@@ -22,7 +22,7 @@ class Game extends Component {
     render() {
         const { hash } = this.props.game
         return (
-            <Container>
+            <Container.WithBackground>
                 <Container.Game
                     left={this.teamCreateButton()}
                     title="Команды">
@@ -31,7 +31,7 @@ class Game extends Component {
                     <Button.Primary
                         text="Дальше" />
                 </Container.Game>
-            </Container>
+            </Container.WithBackground>
         )
     }
 }

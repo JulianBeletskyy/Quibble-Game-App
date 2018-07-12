@@ -1,7 +1,7 @@
 import React from "react"
 import { StackNavigator } from "react-navigation"
 import { Home, Login, Register, Game } from "../screens"
-import { Logo } from "../components"
+import { Logo, Header } from "../components"
 
 const StackOptions = {
     headerMode: "none",
@@ -20,6 +20,7 @@ const GameNavigator = StackNavigator({
     headerMode: "screen",
     initialRouteName: "Game",
     navigationOptions: {
+        header: props => <Header {...props} />,
         headerTitle: <Logo.Small />,
         titleStyle: {
             alignSelf: 'center',

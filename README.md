@@ -1,3 +1,6 @@
+![quibble-logo](https://user-images.githubusercontent.com/35832978/42637550-2702807e-85f4-11e8-99ff-9a4764955040.jpg)
+
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).

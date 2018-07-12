@@ -8,14 +8,13 @@ class Game extends Component {
     render() {
         const { title = null, left = null } = this.props
         return (
-            <View style={styles.logoContainer}>
+            <View style={styles.container}>
                 <StatusBar
                     translucent={false}
                     barStyle="light-content" />
 
                 <View style={styles.logoSmall}>
                     { left }
-
                     <Logo.Small />
                 </View>
 
