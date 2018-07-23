@@ -14,3 +14,19 @@ export function gameSave(data) {
         data,
     }
 }
+
+export function teamCreate(data) {
+    return {
+        type: types.TEAM_CREATE,
+        method: 'teamCreate',
+        callback: 'teamAdd',
+        data,
+    }
+}
+
+export function teamAdd(data) {
+    return {
+        type: types.TEAM_ADD,
+        data,
+    }
+}

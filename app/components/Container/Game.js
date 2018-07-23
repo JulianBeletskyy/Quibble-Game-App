@@ -13,11 +13,6 @@ class Game extends Component {
                     translucent={false}
                     barStyle="light-content" />
 
-                <View style={styles.logoSmall}>
-                    { left }
-                    <Logo.Small />
-                </View>
-
                 <View style={styles.title}>
                     <Words.Title
                         text={title} />

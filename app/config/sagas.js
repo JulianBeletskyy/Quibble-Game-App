@@ -59,6 +59,7 @@ const rootSaga = function* () {
     yield takeEvery(types.AUTH_LOGGED_IN, saveToken)
     yield takeEvery(types.AUTH_LOGOUT, removeToken)
     yield takeEvery(types.GAME_CREATE, sagaAPI)
+    yield takeEvery(types.TEAM_CREATE, sagaAPI)
 }
 
 export default rootSaga

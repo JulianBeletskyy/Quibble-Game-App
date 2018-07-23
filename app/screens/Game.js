@@ -12,19 +12,11 @@ class Game extends Component {
         }
     }
 
-    teamCreateButton() {
-        return (
-            <Button.Small
-                text="Новая команда" />
-        )
-    }
-
     render() {
         const { hash } = this.props.game
         return (
             <Container.WithBackground>
                 <Container.Game
-                    left={this.teamCreateButton()}
                     title="Команды">
                     <Teams />
 

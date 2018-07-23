@@ -1,7 +1,7 @@
 import React from "react"
 import { StackNavigator } from "react-navigation"
-import { Home, Login, Register, Game } from "../screens"
-import { Logo, Header } from "../components"
+import { Home, Login, Register, Game, CreateTeam } from "../screens"
+import { Header } from "../components"
 
 const StackOptions = {
     headerMode: "none",
@@ -21,17 +21,20 @@ const GameNavigator = StackNavigator({
     initialRouteName: "Game",
     navigationOptions: {
         header: props => <Header {...props} />,
-        headerTitle: <Logo.Small />,
-        titleStyle: {
-            alignSelf: 'center',
-        },
-        headerTitleStyle: {
-            textAlign: 'center',
-        },
-        headerStyle: {
-            backgroundColor: '#111',
-            justifyContent: 'center',
-        }
+    }
+})
+
+const CreateTeamNavigator = StackNavigator({
+    CreateTeam: {
+        screen: CreateTeam
+    },
+},
+{
+    ...StackOptions,
+    headerMode: "screen",
+    initialRouteName: "CreateTeam",
+    navigationOptions: {
+        header: props => <Header {...props} />,
     }
 })
 
@@ -47,6 +50,9 @@ export default StackNavigator({
     },
     Game: {
         screen: GameNavigator
+    },
+    CreateTeam: {
+        screen: CreateTeamNavigator
     },
 },
 {

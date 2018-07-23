@@ -15,7 +15,7 @@ EStyleSheet.build({
     $lightGray: '#999',
     $loaderBack: 'rgba(0, 0, 0, 0.5)',
 
-    $outline: 1,
+    //$outline: 1,
 })
 
 class App extends Component {

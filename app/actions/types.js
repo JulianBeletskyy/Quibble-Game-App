@@ -11,6 +11,9 @@ export const AUTH_RECOVERY = 'AUTH_RECOVERY'
 export const GAME_CREATE = 'GAME_CREATE'
 export const GAME_SAVE = 'GAME_SAVE'
 
+export const TEAM_CREATE = 'TEAM_CREATE'
+export const TEAM_ADD = 'TEAM_ADD'
+
 export const ALERTS_VALIDATE = 'ALERTS_VALIDATE'
 export const ALERTS_VALIDATE_CLEAR = 'ALERTS_VALIDATE_CLEAR'
 export const ALERTS_ERRORS = 'ALERTS_ERRORS'
