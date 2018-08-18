@@ -29,8 +29,7 @@ class CreateTeam extends Component {
     }
 
     render() {
-        //const { name } = this.props.game.team_editing
-        console.log(this.props.game.team_editing)
+        const { name } = this.props.game.team_editing
         return (
             <Container.WithBackground>
                 <Input
@@ -38,7 +37,7 @@ class CreateTeam extends Component {
                     placeholder='Название команды'
                     inputRef={input => { this.inputs.team_name = input }}
                     onSubmit={this.hideKeyboard}
-                    //value={name}
+                    value={name}
                     onChangeText={value => this.handleText(value, 'team_name')} />
             </Container.WithBackground>
         )
